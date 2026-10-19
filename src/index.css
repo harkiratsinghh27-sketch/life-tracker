@@ -1,0 +1,17 @@
+/* Clean global CSS reset */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #07080C;
+  color: #F8FAFC;
+  font-family: 'Inter', sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
