@@ -1,8 +1,11 @@
-# Life Tracker — Autonomous Activity & Life Operating System
+# Life Tracker (LifeDB) — Real-Time Activity Telemetry & Life Operating System
 
 [![Vercel Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat&logo=vercel)](https://life-db-roan.vercel.app)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-life--db--roan.vercel.app-blue)](https://life-db-roan.vercel.app)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React 19](https://img.shields.io/badge/React-19.0-blue?style=flat&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Bundler-Vite-646CFF?style=flat&logo=vite)](https://vitejs.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 > 🚀 **Live Production Application**: [https://life-db-roan.vercel.app](https://life-db-roan.vercel.app)
 
@@ -10,54 +13,96 @@
 
 ## 📌 Overview
 
-**Life Tracker (LifeDB)** is a high-fidelity personal operating system, activity telemetry database, and execution engine. Built with **React 19, TypeScript, and Vite**, it combines structured time-series scheduling, strict accountability state machines, multidimensional balance radar analytics, and a conversational AI copilot (Jarvis) into a single, unified interface.
+**Life Tracker (LifeDB)** is a high-performance personal operating system, activity telemetry database, and disciplined execution engine. Built with **React 19, TypeScript, and Vite**, it combines structured time-series scheduling, strict accountability state machines, multidimensional equilibrium analytics, and an interactive conversational copilot into a unified interface.
 
 ---
 
-## 🌟 Key Features
+## 🏗️ System Architecture
 
-- **🌐 Live Production Deployment**: Hosted on Vercel with automated global CDN edge caching at [https://life-db-roan.vercel.app](https://life-db-roan.vercel.app).
-- **⏱️ 24-Hour Timeline & Schedulers**: Flexible day timeline, week calendar, and month planner for tracking recurring and fixed protocols across all domains.
-- **🛡️ High-Friction Accountability Engine**: Unavoidable modal justification required to skip any high-priority protocol (minimum 20 characters) with real-time streak reset prevention.
-- **📊 SSSGDW Balance Radar**: Multi-axis radar visualization dynamically computing life domain equilibrium (Social, Spiritual, Study, Gym, Diet, Work, Balance).
-- **🤖 Jarvis Conversational AI Assistant**: Natural language copilot with tool bindings for quick schedule queries, logging actions, and habit adjustments.
-- **⚡ In-Memory Activity Persistence**: Relational task and daily log schemas ensuring deterministic sub-second state transitions and offline resilience.
+```mermaid
+flowchart TD
+    User([👤 User / Operator]) <-->|Interactive Drag-and-Drop & Logging| UI[🖥️ LifeDB Web Application (Vercel Edge)]
+
+    subgraph "Core State & Telemetry Store"
+        UI <--> StateEngine[⚡ In-Memory Telemetry & LocalStorage Sync]
+        StateEngine --> TaskStore[(📋 Protocols & Tasks State)]
+        StateEngine --> LogStore[(⏱️ Time-Series Daily Logs)]
+        StateEngine --> StreakMachine[🔥 Accountability & Streak Engine]
+    end
+
+    subgraph "Analytics & Behavioral Feedback Loops"
+        StateEngine --> RadarCalc[📊 Multi-Axis Life Balance Equilibrium Radar]
+        StateEngine --> VelocityMetric[📈 Completion Velocity & Consistency Metrics]
+        StreakMachine -->|Skip Triggered| HighFrictionModal[🛡️ Mandatory Justification Gate (20+ chars)]
+    end
+
+    subgraph "Conversational Copilot"
+        User <-->|Schedule Queries & Natural Logging| Copilot[🤖 Contextual AI Assistant]
+        Copilot <--> StateEngine
+    end
+```
+
+---
+
+## 🌟 Key Capabilities
+
+### 1. Interactive 24-Hour Timeline & Multi-View Schedulers
+* **Sub-Hour Precision:** Dynamic drag-and-drop schedule planner featuring Day, Week, and Month views.
+* **Collision Detection:** Visual conflict alerts when deep work intervals overlap with scheduled protocols.
+
+### 2. High-Friction Accountability State Machine
+* **Anti-Procrastination Guardrails:** Bypassing any high-priority protocol requires a mandatory written justification (minimum 20 characters).
+* **Deterministic Streak Preservation:** Unjustified skips instantly reset running streaks and log the justification to immutable historical daily records.
+
+### 3. Multi-Axis Equilibrium Radar
+* **Holistic Balance Tracking:** Real-time multi-dimensional radar dynamically computing life domain equilibrium across Social, Spiritual, Study, Gym, Diet, Work, and Balance.
+* **Algorithmic Weighting:** Highlights under-indexed domains and recommends priority adjustments.
+
+### 4. Offline-First In-Memory Persistence
+* **Sub-Millisecond UI Response:** Fully reactive state architecture delivering instantaneous optimistic updates without server latency.
+* **Resilient Data Storage:** Structured schemas automatically backed up to browser local storage.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 19, TypeScript, Vite
-- **State Management**: React Context & Hooks Architecture
-- **Icons & UI**: Lucide React, Custom Dark/Glassmorphism CSS
-- **Deployment & Hosting**: Vercel Global Edge Network ([life-db-roan.vercel.app](https://life-db-roan.vercel.app))
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend Framework** | React 19, TypeScript, Vite |
+| **Styling & Design** | Pure CSS3 (Dark Mode, Glassmorphic Tokens, Responsive Breakpoints) |
+| **Icons & Visuals** | Lucide React |
+| **Deployment** | Vercel Global Edge CDN ([life-db-roan.vercel.app](https://life-db-roan.vercel.app)) |
 
 ---
 
 ## 🚀 Local Development
 
-```bash
-# Clone the repository
-git clone https://github.com/harkiratsinghh27-sketch/life-tracker.git
+### Installation
 
-# Navigate into the project directory
-cd life-tracker
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/harkiratsinghh27-sketch/life-tracker.git
+   cd life-tracker
+   ```
 
-# Install dependencies
-npm install
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-# Start the development server
-npm run dev
-```
+3. **Start the local dev server:**
+   ```bash
+   npm run dev
+   ```
 
-Build for production:
-```bash
-npm run build
-```
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
 ---
 
-## 🔗 Links
+## 🔗 Live Application
 
-- **Live Application**: [https://life-db-roan.vercel.app](https://life-db-roan.vercel.app)
-- **GitHub Repository**: [https://github.com/harkiratsinghh27-sketch/life-tracker](https://github.com/harkiratsinghh27-sketch/life-tracker)
+The production application is continuously deployed and accessible at:
+👉 **[https://life-db-roan.vercel.app](https://life-db-roan.vercel.app)**
